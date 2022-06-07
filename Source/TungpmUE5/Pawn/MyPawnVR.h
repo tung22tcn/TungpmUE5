@@ -4,16 +4,16 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
-#include "MyPawn.generated.h"
+#include "MyPawnVR.generated.h"
 
 UCLASS()
-class TUNGPMUE5_API AMyPawn : public APawn
+class TUNGPMUE5_API AMyPawnVR : public APawn
 {
 	GENERATED_BODY()
 
 public:
 	// Sets default values for this pawn's properties
-	AMyPawn();
+	AMyPawnVR();
 
 protected:
 	// Called when the game starts or when spawned
@@ -25,5 +25,13 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+public:
+	
+	UPROPERTY()
+	class USceneComponent * Root;
+
+	UPROPERTY()
+	class UCameraComponent * Camera;
 
 };
